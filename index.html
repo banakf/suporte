@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-<title>🐾 Petzac – Cuidado inteligente para seu pet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Petzac – Cuidado inteligente para seu pet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
@@ -17,8 +17,31 @@
     header {
       background: #2c7be5;
       color: white;
-      padding: 40px 20px;
+      padding: 40px 20px 20px;
       text-align: center;
+    }
+
+    .langbar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .langbar label {
+      font-weight: bold;
+      font-size: 14px;
+      opacity: 0.95;
+    }
+
+    .langbar select {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 0;
+      outline: none;
+      font-size: 14px;
+      cursor: pointer;
     }
 
     nav {
@@ -36,6 +59,7 @@
       color: #2c7be5;
       text-decoration: none;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     section {
@@ -63,51 +87,67 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
+
+    .muted {
+      opacity: 0.95;
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-<h1 style="margin:0; display:flex; align-items:center; justify-content:center; gap:10px;">
-  <!-- Ícone pata branca (SVG) -->
-  <svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true" style="display:block">
-    <g fill="#fff">
-      <!-- dedos -->
-      <ellipse cx="18" cy="22" rx="6.5" ry="8.5"/>
-      <ellipse cx="30" cy="14" rx="6.5" ry="9.5"/>
-      <ellipse cx="42" cy="14" rx="6.5" ry="9.5"/>
-      <ellipse cx="54" cy="22" rx="6.5" ry="8.5"/>
-      <!-- almofada (sem “figura do meio” extra; é só a base da pata) -->
-      <path d="M32 26c-12 0-20 10-20 22 0 8 6 14 14 14 3 0 5-1 6-2 1 1 3 2 6 2 8 0 14-6 14-14 0-12-8-22-20-22z"/>
-    </g>
-  </svg>
+  <h1 style="margin:0; display:flex; align-items:center; justify-content:center; gap:10px;">
+    <!-- Ícone pata branca (SVG) -->
+    <svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true" style="display:block">
+      <g fill="#fff">
+        <ellipse cx="18" cy="22" rx="6.5" ry="8.5"/>
+        <ellipse cx="30" cy="14" rx="6.5" ry="9.5"/>
+        <ellipse cx="42" cy="14" rx="6.5" ry="9.5"/>
+        <ellipse cx="54" cy="22" rx="6.5" ry="8.5"/>
+        <path d="M32 26c-12 0-20 10-20 22 0 8 6 14 14 14 3 0 5-1 6-2 1 1 3 2 6 2 8 0 14-6 14-14 0-12-8-22-20-22z"/>
+      </g>
+    </svg>
 
-  <span>Petzac</span>
-</h1>
-  <p>Cuidado inteligente, simples e seguro para seu pet</p>
+    <span data-i18n="appName">Petzac</span>
+  </h1>
+
+  <p class="muted" data-i18n="tagline">Cuidado inteligente, simples e seguro para seu pet</p>
+
+  <!-- Seletor de idioma -->
+  <div class="langbar">
+    <label for="langSelect" data-i18n="languageLabel">Idioma:</label>
+    <select id="langSelect" aria-label="Selecionar idioma">
+      <option value="pt-BR">Português (Brasil)</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="ja">日本語</option>
+    </select>
+  </div>
 </header>
 
 <nav>
-  <a href="#marketing">Sobre o App</a>
-  <a href="#funcionalidades">Funcionalidades</a>
-  <a href="#suporte">Suporte</a>
-  <a href="#privacidade">Privacidade</a>
+  <a href="#marketing" data-i18n="navAbout">Sobre o App</a>
+  <a href="#funcionalidades" data-i18n="navFeatures">Funcionalidades</a>
+  <a href="#suporte" data-i18n="navSupport">Suporte</a>
+  <a href="#privacidade" data-i18n="navPrivacy">Privacidade</a>
 </nav>
 
 <section id="marketing">
   <div class="box">
-    <h2>Sobre o Petzac</h2>
-    <p>
+    <h2 data-i18n="aboutTitle">Sobre o Petzac</h2>
+    <p data-i18n="aboutP1">
       O <strong>Petzac</strong> foi criado para ajudar tutores e veterinários a cuidarem melhor
       da saúde, rotina e bem-estar de seus pets.
     </p>
-    <p>
+    <p data-i18n="aboutP2">
       Com uma interface simples e intuitiva, o aplicativo centraliza informações
       importantes do seu animal de estimação, ajudando você a manter tudo
       organizado e acessível.
     </p>
-    <p>
+    <p data-i18n="aboutP3">
       Nosso objetivo é facilitar o cuidado diário e fortalecer a relação entre
       você e seu pet.
     </p>
@@ -116,62 +156,304 @@
 
 <section id="funcionalidades">
   <div class="box">
-    <h2>Principais Funcionalidades</h2>
+    <h2 data-i18n="featuresTitle">Principais Funcionalidades</h2>
     <ul>
-      <li>📋 Cadastro e gerenciamento de informações do pet</li>
-      <li>🩺 Acompanhamento de saúde e histórico</li>
-      <li>📋 Lista de Contatos dos tutores pata Veterinários</li>
-      <li>📋 Lista de Contatos da saúde do seu PET para tutores</li>
-      <li>⏰ Organização de rotinas e cuidados</li>
-      <li>📱 Interface simples e fácil de usar</li>
-      <li>🔒 Foco em privacidade e segurança</li>
+      <li data-i18n="f1">📋 Cadastro e gerenciamento de informações do pet</li>
+      <li data-i18n="f2">🩺 Acompanhamento de saúde e histórico</li>
+      <li data-i18n="f3">📋 Lista de contatos dos tutores para veterinários</li>
+      <li data-i18n="f4">📋 Lista de contatos de saúde do pet para tutores</li>
+      <li data-i18n="f5">⏰ Organização de rotinas e cuidados</li>
+      <li data-i18n="f6">📱 Interface simples e fácil de usar</li>
+      <li data-i18n="f7">🔒 Foco em privacidade e segurança</li>
     </ul>
   </div>
 </section>
 
 <section id="suporte">
   <div class="box">
-    <h2>Suporte</h2>
-    <p>
+    <h2 data-i18n="supportTitle">Suporte</h2>
+    <p data-i18n="supportP1">
       Se você tiver dúvidas, problemas técnicos ou sugestões sobre o Petzac,
       entre em contato conosco.
     </p>
     <p>
-      📧 E-mail de suporte:<br>
+      <span data-i18n="supportEmailLabel">📧 E-mail de suporte:</span><br>
       <a href="mailto:suportappsok@gmail.com">suportappsok@gmail.com</a>
     </p>
-    <p>
-      Respondemos o mais rápido possível.
-    </p>
+    <p data-i18n="supportP2">Respondemos o mais rápido possível.</p>
   </div>
 </section>
 
 <section id="privacidade">
   <div class="box">
-    <h2>Política de Privacidade</h2>
-    <p>
+    <h2 data-i18n="privacyTitle">Política de Privacidade</h2>
+    <p data-i18n="privacyP1">
       O aplicativo <strong>Petzac</strong> respeita a sua privacidade.
-      Não coletamos, armazenamos ou compartilhamos dados pessoais sensíveis,
-      os dados do seu PET são armazenados no seu iPhone, não armazenamos dados em Cloud ou servidores externos.
+      Não coletamos, armazenamos ou compartilhamos dados pessoais sensíveis.
+      Os dados do seu pet são armazenados no seu iPhone; não armazenamos dados em nuvem ou servidores externos.
     </p>
-    <p>
+    <p data-i18n="privacyP2">
       As informações inseridas no aplicativo são utilizadas exclusivamente
       para o funcionamento das funcionalidades oferecidas.
     </p>
+    <p data-i18n="privacyP3">Não compartilhamos dados com terceiros.</p>
     <p>
-      Não compartilhamos dados com terceiros.
-    </p>
-    <p>
-      Caso tenha dúvidas sobre privacidade, entre em contato pelo e-mail:
+      <span data-i18n="privacyP4">Caso tenha dúvidas sobre privacidade, entre em contato pelo e-mail:</span>
       <a href="mailto:suportappsok@gmail.com">suportappsok@gmail.com</a>
     </p>
   </div>
 </section>
 
 <footer>
-  © 2025 Petzac • Todos os direitos reservados
+  <span data-i18n="footer">© 2025 Petzac • Todos os direitos reservados</span>
 </footer>
+
+<script>
+  const translations = {
+    "pt-BR": {
+      appName: "Petzac",
+      tagline: "Cuidado inteligente, simples e seguro para seu pet",
+      languageLabel: "Idioma:",
+      navAbout: "Sobre o App",
+      navFeatures: "Funcionalidades",
+      navSupport: "Suporte",
+      navPrivacy: "Privacidade",
+      aboutTitle: "Sobre o Petzac",
+      aboutP1: "O <strong>Petzac</strong> foi criado para ajudar tutores e veterinários a cuidarem melhor da saúde, rotina e bem-estar de seus pets.",
+      aboutP2: "Com uma interface simples e intuitiva, o aplicativo centraliza informações importantes do seu animal de estimação, ajudando você a manter tudo organizado e acessível.",
+      aboutP3: "Nosso objetivo é facilitar o cuidado diário e fortalecer a relação entre você e seu pet.",
+      featuresTitle: "Principais Funcionalidades",
+      f1: "📋 Cadastro e gerenciamento de informações do pet",
+      f2: "🩺 Acompanhamento de saúde e histórico",
+      f3: "📋 Lista de contatos dos tutores para veterinários",
+      f4: "📋 Lista de contatos de saúde do pet para tutores",
+      f5: "⏰ Organização de rotinas e cuidados",
+      f6: "📱 Interface simples e fácil de usar",
+      f7: "🔒 Foco em privacidade e segurança",
+      supportTitle: "Suporte",
+      supportP1: "Se você tiver dúvidas, problemas técnicos ou sugestões sobre o Petzac, entre em contato conosco.",
+      supportEmailLabel: "📧 E-mail de suporte:",
+      supportP2: "Respondemos o mais rápido possível.",
+      privacyTitle: "Política de Privacidade",
+      privacyP1: "O aplicativo <strong>Petzac</strong> respeita a sua privacidade. Não coletamos, armazenamos ou compartilhamos dados pessoais sensíveis. Os dados do seu pet são armazenados no seu iPhone; não armazenamos dados em nuvem ou servidores externos.",
+      privacyP2: "As informações inseridas no aplicativo são utilizadas exclusivamente para o funcionamento das funcionalidades oferecidas.",
+      privacyP3: "Não compartilhamos dados com terceiros.",
+      privacyP4: "Caso tenha dúvidas sobre privacidade, entre em contato pelo e-mail:",
+      footer: "© 2025 Petzac • Todos os direitos reservados"
+    },
+
+    en: {
+      appName: "Petzac",
+      tagline: "Smart, simple, and safe care for your pet",
+      languageLabel: "Language:",
+      navAbout: "About the App",
+      navFeatures: "Features",
+      navSupport: "Support",
+      navPrivacy: "Privacy",
+      aboutTitle: "About Petzac",
+      aboutP1: "<strong>Petzac</strong> was created to help pet owners and veterinarians better manage pets’ health, routine, and well-being.",
+      aboutP2: "With a simple and intuitive interface, the app centralizes your pet’s important information, helping you keep everything organized and easy to access.",
+      aboutP3: "Our goal is to make daily care easier and strengthen the bond between you and your pet.",
+      featuresTitle: "Key Features",
+      f1: "📋 Register and manage your pet’s information",
+      f2: "🩺 Track health and history",
+      f3: "📋 Owners’ contact list for veterinarians",
+      f4: "📋 Pet health contacts list for owners",
+      f5: "⏰ Organize routines and care reminders",
+      f6: "📱 Simple, easy-to-use interface",
+      f7: "🔒 Focus on privacy and security",
+      supportTitle: "Support",
+      supportP1: "If you have questions, technical issues, or suggestions about Petzac, please contact us.",
+      supportEmailLabel: "📧 Support email:",
+      supportP2: "We respond as quickly as possible.",
+      privacyTitle: "Privacy Policy",
+      privacyP1: "<strong>Petzac</strong> respects your privacy. We do not collect, store, or share sensitive personal data. Your pet’s data is stored on your iPhone; we do not store data in the cloud or on external servers.",
+      privacyP2: "Information entered in the app is used exclusively to provide the features offered.",
+      privacyP3: "We do not share data with third parties.",
+      privacyP4: "If you have privacy questions, contact us at:",
+      footer: "© 2025 Petzac • All rights reserved"
+    },
+
+    es: {
+      appName: "Petzac",
+      tagline: "Cuidado inteligente, simple y seguro para tu mascota",
+      languageLabel: "Idioma:",
+      navAbout: "Sobre la App",
+      navFeatures: "Funciones",
+      navSupport: "Soporte",
+      navPrivacy: "Privacidad",
+      aboutTitle: "Sobre Petzac",
+      aboutP1: "<strong>Petzac</strong> fue creado para ayudar a tutores y veterinarios a cuidar mejor la salud, la rutina y el bienestar de sus mascotas.",
+      aboutP2: "Con una interfaz simple e intuitiva, la aplicación centraliza la información importante de tu mascota, ayudándote a mantener todo organizado y accesible.",
+      aboutP3: "Nuestro objetivo es facilitar el cuidado diario y fortalecer la relación entre tú y tu mascota.",
+      featuresTitle: "Funciones Principales",
+      f1: "📋 Registro y gestión de la información de tu mascota",
+      f2: "🩺 Seguimiento de salud e historial",
+      f3: "📋 Lista de contactos de tutores para veterinarios",
+      f4: "📋 Lista de contactos de salud de la mascota para tutores",
+      f5: "⏰ Organización de rutinas y cuidados",
+      f6: "📱 Interfaz simple y fácil de usar",
+      f7: "🔒 Enfoque en privacidad y seguridad",
+      supportTitle: "Soporte",
+      supportP1: "Si tienes dudas, problemas técnicos o sugerencias sobre Petzac, ponte en contacto con nosotros.",
+      supportEmailLabel: "📧 Correo de soporte:",
+      supportP2: "Respondemos lo más rápido posible.",
+      privacyTitle: "Política de Privacidad",
+      privacyP1: "<strong>Petzac</strong> respeta tu privacidad. No recopilamos, almacenamos ni compartimos datos personales sensibles. Los datos de tu mascota se guardan en tu iPhone; no almacenamos datos en la nube ni en servidores externos.",
+      privacyP2: "La información ingresada en la aplicación se usa exclusivamente para el funcionamiento de las funciones ofrecidas.",
+      privacyP3: "No compartimos datos con terceros.",
+      privacyP4: "Si tienes dudas sobre privacidad, contáctanos por correo:",
+      footer: "© 2025 Petzac • Todos los derechos reservados"
+    },
+
+    fr: {
+      appName: "Petzac",
+      tagline: "Des soins intelligents, simples et sûrs pour votre animal",
+      languageLabel: "Langue :",
+      navAbout: "À propos",
+      navFeatures: "Fonctionnalités",
+      navSupport: "Support",
+      navPrivacy: "Confidentialité",
+      aboutTitle: "À propos de Petzac",
+      aboutP1: "<strong>Petzac</strong> a été créé pour aider les propriétaires et les vétérinaires à mieux gérer la santé, la routine et le bien-être des animaux.",
+      aboutP2: "Avec une interface simple et intuitive, l’application centralise les informations importantes de votre animal, afin de tout garder organisé et accessible.",
+      aboutP3: "Notre objectif est de faciliter les soins quotidiens et de renforcer le lien entre vous et votre animal.",
+      featuresTitle: "Fonctionnalités principales",
+      f1: "📋 Enregistrer et gérer les informations de l’animal",
+      f2: "🩺 Suivi de santé et historique",
+      f3: "📋 Liste de contacts des propriétaires pour les vétérinaires",
+      f4: "📋 Liste de contacts de santé de l’animal pour les propriétaires",
+      f5: "⏰ Organisation des routines et des soins",
+      f6: "📱 Interface simple et facile à utiliser",
+      f7: "🔒 Priorité à la confidentialité et à la sécurité",
+      supportTitle: "Support",
+      supportP1: "Pour toute question, problème technique ou suggestion concernant Petzac, contactez-nous.",
+      supportEmailLabel: "📧 E-mail du support :",
+      supportP2: "Nous répondons aussi vite que possible.",
+      privacyTitle: "Politique de confidentialité",
+      privacyP1: "<strong>Petzac</strong> respecte votre vie privée. Nous ne collectons, ne stockons ni ne partageons des données personnelles sensibles. Les données de votre animal sont stockées sur votre iPhone ; nous ne stockons pas de données dans le cloud ni sur des serveurs externes.",
+      privacyP2: "Les informations saisies dans l’application sont utilisées exclusivement pour fournir les fonctionnalités proposées.",
+      privacyP3: "Nous ne partageons pas les données avec des tiers.",
+      privacyP4: "Pour toute question sur la confidentialité, contactez-nous à :",
+      footer: "© 2025 Petzac • Tous droits réservés"
+    },
+
+    de: {
+      appName: "Petzac",
+      tagline: "Intelligente, einfache und sichere Pflege für dein Haustier",
+      languageLabel: "Sprache:",
+      navAbout: "Über die App",
+      navFeatures: "Funktionen",
+      navSupport: "Support",
+      navPrivacy: "Datenschutz",
+      aboutTitle: "Über Petzac",
+      aboutP1: "<strong>Petzac</strong> wurde entwickelt, um Tierhalter und Tierärzte bei Gesundheit, Routine und Wohlbefinden ihrer Haustiere zu unterstützen.",
+      aboutP2: "Mit einer einfachen und intuitiven Oberfläche bündelt die App wichtige Informationen zu deinem Haustier, damit alles organisiert und leicht zugänglich ist.",
+      aboutP3: "Unser Ziel ist es, die tägliche Pflege zu erleichtern und die Beziehung zwischen dir und deinem Haustier zu stärken.",
+      featuresTitle: "Hauptfunktionen",
+      f1: "📋 Erfassen und verwalten von Haustierdaten",
+      f2: "🩺 Gesundheits- und Verlaufsübersicht",
+      f3: "📋 Kontaktliste der Halter für Tierärzte",
+      f4: "📋 Gesundheits-Kontaktliste für Halter",
+      f5: "⏰ Routinen und Pflege organisieren",
+      f6: "📱 Einfache, leicht zu bedienende Oberfläche",
+      f7: "🔒 Fokus auf Datenschutz und Sicherheit",
+      supportTitle: "Support",
+      supportP1: "Wenn du Fragen, technische Probleme oder Vorschläge zu Petzac hast, kontaktiere uns bitte.",
+      supportEmailLabel: "📧 Support-E-Mail:",
+      supportP2: "Wir antworten so schnell wie möglich.",
+      privacyTitle: "Datenschutzerklärung",
+      privacyP1: "<strong>Petzac</strong> respektiert deine Privatsphäre. Wir erfassen, speichern oder teilen keine sensiblen personenbezogenen Daten. Die Daten deines Haustiers werden auf deinem iPhone gespeichert; wir speichern keine Daten in der Cloud oder auf externen Servern.",
+      privacyP2: "Eingegebene Informationen werden ausschließlich zur Bereitstellung der Funktionen verwendet.",
+      privacyP3: "Wir geben keine Daten an Dritte weiter.",
+      privacyP4: "Bei Fragen zum Datenschutz kontaktiere uns unter:",
+      footer: "© 2025 Petzac • Alle Rechte vorbehalten"
+    },
+
+    ja: {
+      appName: "Petzac",
+      tagline: "ペットのケアをもっとスマートに、シンプルに、安全に",
+      languageLabel: "言語：",
+      navAbout: "アプリについて",
+      navFeatures: "機能",
+      navSupport: "サポート",
+      navPrivacy: "プライバシー",
+      aboutTitle: "Petzacについて",
+      aboutP1: "<strong>Petzac</strong> は、飼い主と獣医師がペットの健康・日々の管理・ウェルビーイングをより良く行えるように作られました。",
+      aboutP2: "シンプルで直感的なUIで、ペットに関する大切な情報をまとめて管理し、整理してすぐに確認できます。",
+      aboutP3: "毎日のケアを楽にし、あなたとペットの絆をより深めることが私たちの目的です。",
+      featuresTitle: "主な機能",
+      f1: "📋 ペット情報の登録・管理",
+      f2: "🩺 健康管理と履歴の記録",
+      f3: "📋 獣医師向け：飼い主連絡先リスト",
+      f4: "📋 飼い主向け：ペットの健康連絡先リスト",
+      f5: "⏰ ルーティンやケアの整理",
+      f6: "📱 シンプルで使いやすいインターフェース",
+      f7: "🔒 プライバシーと安全性を重視",
+      supportTitle: "サポート",
+      supportP1: "ご不明点や技術的な問題、ご提案がありましたら、お気軽にご連絡ください。",
+      supportEmailLabel: "📧 サポートメール：",
+      supportP2: "できるだけ早く返信します。",
+      privacyTitle: "プライバシーポリシー",
+      privacyP1: "<strong>Petzac</strong> はプライバシーを尊重します。機微な個人情報を収集・保存・共有しません。ペットのデータはiPhone内に保存され、クラウドや外部サーバーには保存しません。",
+      privacyP2: "アプリに入力された情報は、提供する機能のためにのみ使用されます。",
+      privacyP3: "第三者とデータを共有しません。",
+      privacyP4: "プライバシーに関するお問い合わせ：",
+      footer: "© 2025 Petzac • All rights reserved"
+    }
+  };
+
+  function setLanguage(lang) {
+    const dict = translations[lang] || translations["pt-BR"];
+    document.documentElement.lang = lang;
+
+    // Atualiza texto de elementos data-i18n
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (!dict[key]) return;
+      el.innerHTML = dict[key];
+    });
+
+    // Atualiza título da aba (sem HTML)
+    const plainTitle = {
+      "pt-BR": "Petzac – Cuidado inteligente para seu pet",
+      "en": "Petzac – Smart care for your pet",
+      "es": "Petzac – Cuidado inteligente para tu mascota",
+      "fr": "Petzac – Des soins intelligents pour votre animal",
+      "de": "Petzac – Smarte Pflege für dein Haustier",
+      "ja": "Petzac – ペットのスマートケア"
+    };
+    document.title = plainTitle[lang] || plainTitle["pt-BR"];
+
+    // Salva preferência
+    try { localStorage.setItem("petzac_lang", lang); } catch(e) {}
+  }
+
+  // Inicialização: preferência salva > idioma do navegador > pt-BR
+  (function init() {
+    const select = document.getElementById("langSelect");
+    let lang = "pt-BR";
+
+    try {
+      const saved = localStorage.getItem("petzac_lang");
+      if (saved && translations[saved]) lang = saved;
+      else {
+        const nav = (navigator.language || "pt-BR").toLowerCase();
+        if (nav.startsWith("pt")) lang = "pt-BR";
+        else if (nav.startsWith("es")) lang = "es";
+        else if (nav.startsWith("fr")) lang = "fr";
+        else if (nav.startsWith("de")) lang = "de";
+        else if (nav.startsWith("ja")) lang = "ja";
+        else lang = "en";
+      }
+    } catch(e) {}
+
+    select.value = lang;
+    setLanguage(lang);
+
+    select.addEventListener("change", (e) => setLanguage(e.target.value));
+  })();
+</script>
 
 </body>
 </html>
->
